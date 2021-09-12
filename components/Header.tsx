@@ -9,7 +9,7 @@ export default function Header() {
     <HStack
       position="sticky"
       top={0}
-      z={50}
+      zIndex={"50"}
       bg="white"
       boxShadow="md"
       py={4}
