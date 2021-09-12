@@ -31,7 +31,7 @@ export default function Banner() {
           _focus={{ outline: 'none' }}
           transition="0.15s"
         >
-          I'm flexible
+          I&apos;m flexible
         </Button>
       </Box>
     </Box>
