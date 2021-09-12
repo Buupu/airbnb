@@ -1,12 +1,8 @@
-import { DestinationModal } from "../modal/Destination";
-import { VStack, Box, Heading, AspectRatio } from "@chakra-ui/layout";
+import { MediumCardProps } from "../modal/CardProps";
+import { Box, Heading, AspectRatio } from "@chakra-ui/layout";
 import Image from "next/image";
 
-export default function MediumCard({
-  destination,
-}: {
-  destination: DestinationModal;
-}) {
+export default function MediumCard({ img, title }: MediumCardProps) {
   return (
     <Box
       cursor="pointer"
@@ -23,10 +19,10 @@ export default function MediumCard({
         borderRadius="lg"
         overflow="hidden"
       >
-        <Image src={destination.img} layout="fill" />
+        <Image src={img} layout="fill" />
       </AspectRatio>
       <Heading mt={3} fontSize="14px">
-        {destination.title}
+        {title}
       </Heading>
     </Box>
   );

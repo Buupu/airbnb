@@ -9,19 +9,20 @@ import {
 } from "@chakra-ui/react";
 import Header from "../components/Header";
 import Banner from "../components/Banner";
-import { DestinationModal } from "../modal/Destination";
+import { SmallCardProps, MediumCardProps } from "../modal/CardProps";
 import React from "react";
 import SmallCard from "../components/SmallCard";
 import Section from "../components/Section";
 import MediumCard from "../components/MediumCard";
 import Image from "next/image";
+import LargeCard from "../components/LargeCard";
 
 export default function Home({
   exploreData,
   liveAnywhereData,
 }: {
-  exploreData: DestinationModal[];
-  liveAnywhereData: DestinationModal[];
+  exploreData: SmallCardProps[];
+  liveAnywhereData: MediumCardProps[];
 }) {
   return (
     <Box>
@@ -40,7 +41,9 @@ export default function Home({
             {exploreData?.map((destination) => {
               return (
                 <SmallCard
-                  destination={destination}
+                  img={destination.img}
+                  location={destination.location}
+                  distance={destination.distance}
                   key={`small-card-${destination.location}`}
                 />
               );
@@ -62,32 +65,15 @@ export default function Home({
             {liveAnywhereData?.map((destination) => {
               return (
                 <MediumCard
-                  destination={destination}
+                  img={destination.img}
+                  title={destination.title}
                   key={`medium-card-${destination.title}`}
                 />
               );
             })}
           </HStack>
         </Section>
-        <Box
-          my={12}
-          w="100%"
-          h="360px"
-          position="relative"
-          borderRadius="xl"
-          overflow="hidden"
-        >
-          <Image
-            src="https://links.papareact.com/4cj"
-            layout="fill"
-            objectFit="cover"
-          />
-          <Box position="absolute" top="10%" left="10%">
-            <Heading as="h3">The Greatest Outdoors</Heading>
-            <Text>Wishlist curated by Airbnb.</Text>
-            <Button>Get Insprired</Button>
-          </Box>
-        </Box>
+        <LargeCard />
       </Box>
     </Box>
   );
