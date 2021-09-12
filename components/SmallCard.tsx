@@ -1,13 +1,13 @@
-import { SmallCardProps } from "../modal/CardProps";
-import { HStack, Box, Text } from "@chakra-ui/layout";
-import Image from "next/image";
+import { SmallCardProps } from '../modal/CardProps';
+import { HStack, Box, Text } from '@chakra-ui/layout';
+import Image from 'next/image';
 
 export default function SmallCard({ distance, img, location }: SmallCardProps) {
   return (
     <HStack
       spacing={4}
       cursor="pointer"
-      _hover={{ bg: "blackAlpha.100", transform: "scale(1.05)" }}
+      _hover={{ bg: 'blackAlpha.100', transform: 'scale(1.05)' }}
       transition="0.3s ease-out"
       borderRadius="md"
       p={2}
@@ -19,7 +19,7 @@ export default function SmallCard({ distance, img, location }: SmallCardProps) {
         borderRadius="md"
         overflow="hidden"
       >
-        <Image src={img} layout="fill" />
+        <Image src={img} layout="fill" alt={location} />
       </Box>
       <Box>
         <Text>{location}</Text>

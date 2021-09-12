@@ -1,5 +1,5 @@
-import { Box, Heading, Button, Text } from "@chakra-ui/react";
-import Image from "next/image";
+import { Box, Heading, Button, Text } from '@chakra-ui/react';
+import Image from 'next/image';
 
 export default function LargeCard() {
   return (
@@ -15,6 +15,7 @@ export default function LargeCard() {
         src="https://links.papareact.com/4cj"
         layout="fill"
         objectFit="cover"
+        alt="cartoon lake"
       />
       <Box position="absolute" top="20%" left="50px" maxW="300px">
         <Heading as="h3" mb={1}>
@@ -23,7 +24,7 @@ export default function LargeCard() {
         <Text>Wishlist curated by Airbnb.</Text>
         <Button
           bg="gray.800"
-          _hover={{ bgColor: "gray.900", color: "white" }}
+          _hover={{ bgColor: 'gray.900', color: 'white' }}
           color="white"
           mt={3}
         >
