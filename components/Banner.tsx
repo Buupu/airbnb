@@ -11,7 +11,7 @@ export default function Banner() {
         src="https://links.papareact.com/0fm"
         layout="fill"
         objectFit="cover"
-        image="cartoon forrest"
+        alt="cartoon forrest"
       />
       <Box position="absolute" top="50%" w="full" textAlign="center">
         <Text fontSize={['large', 'medium']} fontWeight="bold">
