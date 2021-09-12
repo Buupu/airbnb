@@ -21,7 +21,7 @@ export default function MediumCard({ img, title }: MediumCardProps) {
       >
         <Image src={img} layout="fill" />
       </AspectRatio>
-      <Heading mt={3} fontSize="14px">
+      <Heading mt={3} fontSize="lg" fontWeight="medium">
         {title}
       </Heading>
     </Box>

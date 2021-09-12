@@ -16,6 +16,7 @@ import Section from "../components/Section";
 import MediumCard from "../components/MediumCard";
 import Image from "next/image";
 import LargeCard from "../components/LargeCard";
+import Footer from "../components/Footer";
 
 export default function Home({
   exploreData,
@@ -75,6 +76,7 @@ export default function Home({
         </Section>
         <LargeCard />
       </Box>
+      <Footer />
     </Box>
   );
 }
