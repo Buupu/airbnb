@@ -129,7 +129,13 @@ export default function Header({ placeholder }: { placeholder?: string }) {
           <Link display={["none", "none", "none", "inline-block"]}>
             Become a host
           </Link>
-          <Icon cursor="pointer" h="20px" w="20px" as={FiGlobe} />
+          <Icon
+            cursor="pointer"
+            h="20px"
+            w="20px"
+            as={FiGlobe}
+            display={["none", "none", "block"]}
+          />
           <HStack
             borderRadius="full"
             border="2px"
@@ -140,13 +146,7 @@ export default function Header({ placeholder }: { placeholder?: string }) {
             height="100%"
             spacing="10px"
           >
-            <Icon
-              display={["none", "none", "block"]}
-              h="25px"
-              w="25px"
-              cursor="pointer"
-              as={FiMenu}
-            />
+            <Icon h="25px" w="25px" cursor="pointer" as={FiMenu} />
             <Avatar h="25px" w="25px" cursor="pointer" />
           </HStack>
         </HStack>
