@@ -104,7 +104,7 @@ export default function Header({ placeholder }: { placeholder?: string }) {
             focusBorderColor="none"
             flex={1}
             placeholder={placeholder || "Start your search"}
-            fontSize={14}
+            fontSize={16}
             px={[0, 2]}
             value={searchInput}
             onChange={(e) => setSearchInput(e.target.value)}
@@ -140,7 +140,13 @@ export default function Header({ placeholder }: { placeholder?: string }) {
             height="100%"
             spacing="10px"
           >
-            <Icon h="25px" w="25px" cursor="pointer" as={FiMenu} />
+            <Icon
+              display={["none", "none", "block"]}
+              h="25px"
+              w="25px"
+              cursor="pointer"
+              as={FiMenu}
+            />
             <Avatar h="25px" w="25px" cursor="pointer" />
           </HStack>
         </HStack>
