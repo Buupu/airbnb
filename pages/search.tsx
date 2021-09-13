@@ -40,7 +40,7 @@ export default function Search({
       <Header
         placeholder={`${location} | ${range} | ${numberOfGuests} guests`}
       />
-      <Box maxW="1200px" margin="auto" px={6} py={14}>
+      <Box maxW="1200px" margin="auto" px={6} py={10}>
         <Text fontSize="sm">
           300+ stays | {range} | {numberOfGuests} guests
         </Text>
