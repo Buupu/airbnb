@@ -19,12 +19,15 @@ import React, { useState } from "react";
 import { HiOutlineSearch, HiUsers } from "react-icons/hi";
 import { FiGlobe, FiMenu } from "react-icons/fi";
 import { DateRangePicker, DateRange } from "react-date-range";
+import { useRouter } from "next/dist/client/router";
 
-export default function Header() {
+export default function Header({ placeholder }: { placeholder?: string }) {
   const [searchInput, setSearchInput] = useState<string>("");
   const [startDate, setStartDate] = useState<Date>(new Date());
   const [endDate, setEndDate] = useState<Date>(new Date());
   const [numberOfGuests, setNumberOfGuests] = useState<number>(1);
+
+  const router = useRouter();
 
   const selectionRange = {
     startDate: startDate,
@@ -32,12 +35,30 @@ export default function Header() {
     key: "selection",
   };
 
-  const handleSelect = (ranges) => {
+  const handleSelect = (ranges: {
+    selection: {
+      startDate: React.SetStateAction<Date>;
+      endDate: React.SetStateAction<Date>;
+    };
+  }) => {
     setStartDate(ranges.selection.startDate);
     setEndDate(ranges.selection.endDate);
   };
 
   const resetInput = () => {
+    setSearchInput("");
+  };
+
+  const search = () => {
+    router.push({
+      pathname: "search",
+      query: {
+        location: searchInput,
+        startDate: startDate.toISOString(),
+        endDate: endDate.toISOString(),
+        numberOfGuests,
+      },
+    });
     setSearchInput("");
   };
 
@@ -60,6 +81,7 @@ export default function Header() {
           cursor="pointer"
           margin="auto"
           w="100%"
+          onClick={() => router.push("/")}
         >
           <Image
             src="https://links.papareact.com/qd3"
@@ -81,7 +103,7 @@ export default function Header() {
             border="none"
             focusBorderColor="none"
             flex={1}
-            placeholder="Start your search"
+            placeholder={placeholder || "Start your search"}
             fontSize={14}
             px={[0, 2]}
             value={searchInput}
@@ -104,7 +126,9 @@ export default function Header() {
           color="gray.500"
           spacing={["5px", "20px"]}
         >
-          <Link display={["none", "inline-block"]}>Become a host</Link>
+          <Link display={["none", "none", "none", "inline-block"]}>
+            Become a host
+          </Link>
           <Icon cursor="pointer" h="20px" w="20px" as={FiGlobe} />
           <HStack
             borderRadius="full"
@@ -180,6 +204,7 @@ export default function Header() {
                 color="red.500"
                 _hover={{ bgColor: "red.50" }}
                 _focus={{ outline: "none" }}
+                onClick={search}
               >
                 Search
               </Button>

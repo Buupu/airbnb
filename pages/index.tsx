@@ -1,12 +1,5 @@
 import Head from "next/head";
-import {
-  Box,
-  Button,
-  Heading,
-  HStack,
-  SimpleGrid,
-  Text,
-} from "@chakra-ui/react";
+import { Box, HStack, SimpleGrid } from "@chakra-ui/react";
 import Header from "../components/Header";
 import Banner from "../components/Banner";
 import { SmallCardProps, MediumCardProps } from "../modal/CardProps";
@@ -14,7 +7,6 @@ import React from "react";
 import SmallCard from "../components/SmallCard";
 import Section from "../components/Section";
 import MediumCard from "../components/MediumCard";
-import Image from "next/image";
 import LargeCard from "../components/LargeCard";
 import Footer from "../components/Footer";
 
