@@ -80,8 +80,8 @@ export default function Header({ placeholder }: { placeholder?: string }) {
           h={30}
           cursor="pointer"
           margin="auto"
-          w="100%"
           onClick={() => router.push("/")}
+          flex={1}
         >
           <Image
             src="https://links.papareact.com/qd3"
@@ -92,12 +92,12 @@ export default function Header({ placeholder }: { placeholder?: string }) {
           />
         </Flex>
         <Flex
-          w="100%"
           borderRadius="full"
           border={["0", "2px"]}
           borderColor={["transparent", "gray.100"]}
           align="center"
-          px={[0, 2]}
+          px={2}
+          flex={[2, 1]}
         >
           <Input
             border="none"
@@ -121,7 +121,7 @@ export default function Header({ placeholder }: { placeholder?: string }) {
           />
         </Flex>
         <HStack
-          w="100%"
+          flex={1}
           justify="flex-end"
           color="gray.500"
           spacing={["5px", "20px"]}
