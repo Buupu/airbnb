@@ -24,6 +24,8 @@ export default function Map({ searchResults }) {
     zoom: 11
   });
 
+  console.log(process.env);
+
   return (
     <ReactMapGL
       mapStyle="mapbox://styles/sammyfattah/cktj335ly6s9i17p7jkwztukq"
